@@ -1,0 +1,75 @@
+@import 'styles/_colors.scss';
+
+.navbar > ul, li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar__header, .navbar__footer, ul, li {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+  }
+
+  .navbar__header {
+    width: 30%;
+  }
+
+  .navbar__footer {
+    width: 10%;
+  }
+
+  .navbar__links {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .navbar__account-links {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar__links, .navbar__account-links {
+    font-size: 0.8em;
+  }
+
+  Li {
+    padding: 1em 0;
+
+    a {
+      text-decoration: none;
+      color: $secondary-text;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .navbar__link:hover {
+    a {
+      color: $primary-text;
+    }
+  }
+
+  
+  .navbar__account-link {
+    padding: 0.5em 1em;
+  
+    &:hover {
+    border-radius: 3em;
+    background: $btn-inactive;
+    opacity: 57%;
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+}
+
