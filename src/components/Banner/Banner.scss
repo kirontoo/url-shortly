@@ -1,0 +1,26 @@
+@import 'styles/main';
+
+.banner {
+  background: inherit;
+  margin-top: 3em;
+
+  @include flexbox();
+  @include justify-content( space-between );
+
+  .banner__text {
+    @include flexbox();
+    @include flex-flow( column );
+    justify-content: center;
+    align-items: flex-start;
+    width: 40%;
+
+    .banner__title {
+      font-size: 2.3em;
+    }
+  }
+
+  .banner__img {
+    position: relative;
+    left: 10%;
+  }
+}
