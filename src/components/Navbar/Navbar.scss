@@ -1,19 +1,19 @@
-@import 'styles/_colors.scss';
-
-.navbar > ul, li {
-  list-style: none;
-}
+@import 'styles/main.scss';
 
 .navbar {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flexbox();
+  @include flex-flow( row );
+  @include justify-content( space-between );
+  @include align-items( space-between );
+
+  ul, li {
+    list-style: none;
+  }
 
   .navbar__header, .navbar__footer, ul, li {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
+    @include flexbox();
+    @include flex-flow( row );
+    @include align-items( center );
   }
 
   .navbar__header {
@@ -25,12 +25,12 @@
   }
 
   .navbar__links {
-    justify-content: space-evenly;
+    @include justify-content( space-evenly );
     width: 100%;
   }
 
   .navbar__account-links {
-    justify-content: space-between;
+    @include justify-content( space-between );
     width: 100%;
   }
 
