@@ -1,5 +1,6 @@
 import React from 'react';
 import './Banner.scss';
+import { Button } from 'components/Button';
 
 const backgroundImg = process.env.PUBLIC_URL + 'images/illustration-working.svg';
 
@@ -11,7 +12,7 @@ export function Banner() {
         <p className="banner__subtext subtitle">
           Build your brand's recognition and get detailed insights on how your links are performing.
         </p>
-        <button type="button">Get Started</button>
+        <Button className="btn-pill">Get Started</Button>
       </div>
       <img className="banner__img" src={ backgroundImg } alt="illustration working"/>
     </div>
