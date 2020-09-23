@@ -1,0 +1,17 @@
+@import 'styles/main';
+
+.btn {
+  background: $btn-inactive;
+  padding: 0.5em 1em;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+}
+
+.btn.btn-pill {
+  border-radius: 3em;
+}
+
+.btn.btn-square {
+  border-radius: 5px;
+}
