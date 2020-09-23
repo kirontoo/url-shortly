@@ -10,6 +10,10 @@
     list-style: none;
   }
 
+  .navbar__logo {
+    margin-right: 2.5em;
+  }
+
   .navbar__header, .navbar__footer, ul, li {
     @include flexbox();
     @include flex-flow( row );
@@ -20,10 +24,6 @@
     width: 30%;
   }
 
-  .navbar__footer {
-    width: 10%;
-  }
-
   .navbar__links {
     @include justify-content( space-evenly );
     width: 100%;
@@ -32,6 +32,12 @@
   .navbar__account-links {
     @include justify-content( space-between );
     width: 100%;
+
+    white-space: nowrap;
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* Chrome */
+    word-wrap: break-word; /* IE */
   }
 
   .navbar__links, .navbar__account-links {
@@ -51,9 +57,13 @@
     }
   }
 
-  .navbar__link:hover {
-    a {
-      color: $primary-text;
+  .navbar__link {
+    margin: 0 1em;
+
+    &:hover {
+      a {
+        color: $primary-text;
+      }
     }
   }
 
