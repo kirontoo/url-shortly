@@ -4,7 +4,7 @@ import './UrlShortener.scss'
 import { Button } from 'components/Button';
 
 export const UrlShortener = () => {
-  const [ urlInput, setUrlInput ] = useState( '' );
+  const [ urlInput, setUrlInput ] = useState<string>( '' );
   
   const handleOnInputChange = ( event: React.ChangeEvent<HTMLInputElement> ) => {
     setUrlInput( event.target.value );
