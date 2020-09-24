@@ -1,0 +1,37 @@
+@import 'styles/main';
+
+.url-shortener {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.url-shortener__container {
+  background: $dark-violet;
+  background-image: url( './images/bg-shorten-desktop.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 2.5em;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 4rem;
+
+  .url-shortener__form {
+    @include flexbox();
+    @include justify-content( space-between );
+    width: 100%;
+    height: 100%;
+  }
+
+  #url-link {
+    height: 1.5em;
+    padding: 1em;
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 80%;
+
+    @include placeholder {
+      color: $grayish-violet;
+    }
+
+  }
+}
