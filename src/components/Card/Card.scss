@@ -1,0 +1,28 @@
+@import 'styles/main';
+
+.card {
+  background: #fff;
+  width: 16em;
+  text-align: left;
+  padding: 1em;
+  padding-top: 3.5em;
+  margin: 1em;
+  position: relative;
+
+  .card__icon {
+    background: $dark-violet;
+    padding: 1em;
+    border-radius: 50%;
+    position: absolute;
+    top: -2em;
+  }
+
+  .card__title {
+    margin-bottom: 1em;
+  }
+
+  .card__text {
+    color: $secondary-text;
+    font-size: 0.8em;
+  }
+}
