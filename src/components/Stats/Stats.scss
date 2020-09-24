@@ -1,0 +1,14 @@
+@import 'styles/main';
+
+.stats {
+  width: 100%;
+  @include flexbox();
+  @include flex-flow( column );
+  @include align-items( center );
+  text-align: center;
+  margin-top: 7em;
+
+  .stats__header {
+    width: 40%;
+  }
+}

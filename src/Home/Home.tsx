@@ -4,6 +4,7 @@ import React from 'react';
 import { Navbar } from 'components/Navbar';
 import { Banner } from 'components/Banner';
 import { UrlShortener } from 'components/UrlShortener';
+import { Stats } from 'components/Stats';
 
 export const Home = () => {
   return (
@@ -12,7 +13,7 @@ export const Home = () => {
       <Banner />
       <div className="gray-background" />
       <UrlShortener /> 
-      { /* <Stats /> */ }
+      <Stats />
       { /* <FooterBanner /> */ }
       { /* <Footer /> */ }
     </div>
