@@ -6,13 +6,18 @@
 
   @include flexbox();
   @include justify-content( space-between );
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 2em;
+
 
   .banner__text {
     @include flexbox();
     @include flex-flow( column );
     justify-content: center;
     align-items: flex-start;
-    width: 40%;
+    width: 70%;
 
     .banner__title {
       font-size: 2.3em;
@@ -21,7 +26,9 @@
 
   .banner__img {
     position: relative;
-    left: 10%;
+    width: 60%;
+    height: auto;
+    left: 20%;
   }
 
   button.btn {

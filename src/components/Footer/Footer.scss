@@ -3,7 +3,11 @@
 .footer {
   background: $very-dark-violet;
   color: #fff;
-  padding: 4em 8em;
+  padding: 4em 4em;
+
+  @include flexbox();
+  @include flex-flow( row );
+  @include justify-content( space-around );
 
   svg#logo path {
     fill: #fff;
@@ -18,6 +22,7 @@
     @include flexbox();
     @include flex-flow( row );
     @include justify-content( space-between );
+    width: 100%;
   }
 
   .footer__links {

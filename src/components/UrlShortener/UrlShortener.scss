@@ -1,8 +1,7 @@
 @import 'styles/main';
 
 .url-shortener {
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .url-shortener__container {
@@ -12,7 +11,8 @@
   background-size: 100% 100%;
   padding: 2.5em;
   border-radius: 10px;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   margin-top: 4rem;
 
   .url-shortener__form {
