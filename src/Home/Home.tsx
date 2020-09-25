@@ -6,6 +6,7 @@ import { Banner } from 'components/Banner';
 import { UrlShortener } from 'components/UrlShortener';
 import { Stats } from 'components/Stats';
 import { BoostLinks } from 'components/BoostLinks';
+import { Footer } from 'components/Footer';
 
 export const Home = () => {
   return (
@@ -16,7 +17,7 @@ export const Home = () => {
       <UrlShortener /> 
       <Stats />
       <BoostLinks />
-      { /* <Footer /> */ }
+      <Footer />
     </div>
   )
 };

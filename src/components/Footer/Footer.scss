@@ -1,0 +1,62 @@
+@import 'styles/main';
+
+.footer {
+  background: $very-dark-violet;
+  color: #fff;
+  padding: 4em 8em;
+
+  svg#logo path {
+    fill: #fff;
+  }
+
+  #logo {
+    margin-right: 8em;
+  }
+
+
+  .footer__content {
+    @include flexbox();
+    @include flex-flow( row );
+    @include justify-content( space-between );
+  }
+
+  .footer__links {
+    font-size: 0.8em;
+    @include flexbox();
+    @include flex-flow( column );
+
+    .footer__link-title {
+      margin-bottom: 1em;
+    }
+
+    .footer__link {
+      color: $link-inactive;
+      text-decoration: none;
+      margin: 0.3em 0;
+
+      &:hover {
+        color: $link-active;
+      }
+    }
+  }
+
+  .footer__social-links {
+    @include flexbox();
+    @include flex-flow( row );
+    @include justify-content( space-between );
+    width: 10em;
+
+    a {
+      text-decoration: none;
+    }
+
+    svg.footer__social-icon path {
+      fill: #fff;
+
+      &:hover {
+        fill: $link-active;
+      }
+    }
+  }
+
+}
