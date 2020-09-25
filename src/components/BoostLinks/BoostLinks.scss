@@ -1,0 +1,25 @@
+@import 'styles/main';
+
+.boost-links {
+  @include flexbox();
+  @include justify-content( center );
+  padding: 3em;
+  background: $dark-violet;
+  background-image: url( './images/bg-boost-desktop.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 5em;
+
+  .boost-links__content {
+    color: #fff;
+    @include flexbox();
+    @include flex-flow( column );
+    @include align-items( center );
+    width: 40%;
+
+    .btn.btn-pill {
+      margin-top: 1em;
+    }
+  }
+}
+

@@ -5,6 +5,7 @@ import { Navbar } from 'components/Navbar';
 import { Banner } from 'components/Banner';
 import { UrlShortener } from 'components/UrlShortener';
 import { Stats } from 'components/Stats';
+import { BoostLinks } from 'components/BoostLinks';
 
 export const Home = () => {
   return (
@@ -14,7 +15,7 @@ export const Home = () => {
       <div className="gray-background" />
       <UrlShortener /> 
       <Stats />
-      { /* <FooterBanner /> */ }
+      <BoostLinks />
       { /* <Footer /> */ }
     </div>
   )
