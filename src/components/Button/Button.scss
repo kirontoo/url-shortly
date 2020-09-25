@@ -6,6 +6,10 @@
   color: #fff;
   font-size: 1em;
   border: none;
+
+  &:hover {
+    background: lighten( $btn-inactive, 20% );
+  }
 }
 
 .btn.btn-pill {

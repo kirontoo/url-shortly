@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss';
 
 export const Button: React.FC< React.ButtonHTMLAttributes<HTMLButtonElement> > = ( { type, className, ...rest } ) => {
-  let classes = "btn ";
+  let classes: string = "btn ";
   if ( className ) {
     classes += className;
   }
