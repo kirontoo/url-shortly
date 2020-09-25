@@ -30,6 +30,7 @@ export const Stats = () => {
       </div>
 
       <div className="stats__cards">
+        <div className="stats__line"></div>
         { cards.map( card => <Card title={ card.title } imageUrl={ card.imageUrl } text={ card.text } /> ) }
       </div>
     </div>
