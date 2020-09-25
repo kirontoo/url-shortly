@@ -8,6 +8,8 @@
   padding-top: 3.5em;
   margin: 1em;
   position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
 
   .card__icon {
     background: $dark-violet;
@@ -19,6 +21,7 @@
 
   .card__title {
     margin-bottom: 1em;
+    margin-top: 0.5em
   }
 
   .card__text {
