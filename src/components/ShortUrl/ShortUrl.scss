@@ -1,0 +1,35 @@
+@import 'styles/main';
+
+.short-url {
+  width: 100%;
+
+  .short-url__container {
+    width: calc( 70% + 5em ); 
+    margin: 0.7em auto;
+
+    @include flexbox();
+    @include flex-flow( row );
+    @include justify-content( space-between );
+    @include align-items( center );
+
+    padding: 0.5em 0;
+    background: #fff;
+    border-radius: 5px;
+
+    .short-url__link {
+      margin-left: 1em
+    }
+
+    .short-url__short-link-container {
+      @include flexbox();
+      @include flex-flow( row );
+      @include align-items( center );
+      margin-right: 1em;
+
+      .short-url__short-link {
+        color: $cyan;
+        margin-right: 1em;
+      }
+    }
+  }
+}
