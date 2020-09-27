@@ -1,11 +1,29 @@
 @import 'styles/main';
 
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .short-url {
   width: 100%;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 
   .short-url__container {
     width: calc( 70% + 5em ); 
     margin: 0.7em auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
     @include flexbox();
     @include flex-flow( row );
