@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './ShortUrl.scss';
+import useClippy from 'use-clippy';
 
 import { Button } from 'components/Button';
 
@@ -9,10 +10,15 @@ interface ShortUrlProps {
 }
 
 export const ShortUrl: React.FC< ShortUrlProps > = ({ oldUrl, shortUrl }) => {
-  // TODO: state for copied link
-  // TODO: put link into copy/paste register on clik
+
+  const [ copied, setCopied ] = useState< boolean >( false );
+  const urlToCopyRef = useRef< null | HTMLParagraphElement >( null );
+  const [ clipboard, setClipboard ] = useClippy();
 
   const addToClipboard = () => {
+    setClipboard( shortUrl );
+    setCopied( true );
+    setTimeout( () => setCopied( false ), 1000 );
   }
 
   return (
@@ -20,12 +26,14 @@ export const ShortUrl: React.FC< ShortUrlProps > = ({ oldUrl, shortUrl }) => {
       <div className="short-url__container">
         <p className="short-url__link">
           {
-            ( oldUrl.length > 60 ) ? oldUrl.trim().slice( 0, 60 ).concat( "..." ) : oldUrl
+            ( oldUrl.length > 55 ) ? oldUrl.trim().slice( 0, 55 ).concat( "..." ) : oldUrl
           }
         </p>
         <div className="short-url__short-link-container">
-          <p className="short-url__short-link">{ shortUrl }</p>
-          <Button onClick={ addToClipboard } className="short-url__copy btn-square">Copy</Button>
+          <p ref={ urlToCopyRef } className="short-url__short-link">{ shortUrl }</p>
+          <Button onClick={ addToClipboard } className={ `short-url__copy btn-square ${( copied ) ? "btn-active" : ""}`  }>
+            { copied ? "Copied!" : "Copy" }
+          </Button>
         </div>
       </div>
     </div>
