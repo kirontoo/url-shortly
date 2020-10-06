@@ -26,7 +26,9 @@ export const UrlShortener = () => {
 
   useEffect( () => {
     // grab previously shortend urls from local storage
+    if ( localStorage.getItem( LOCAL_STORAGE_KEY ) ) {
     setShortendUrls( getUrlsFromStorage() );
+    }    
   }, []);
 
   // check for valid url links
