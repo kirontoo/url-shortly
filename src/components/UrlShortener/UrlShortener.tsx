@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './UrlShortener.scss'
 
 import { Button } from 'components/Button';
@@ -19,15 +19,25 @@ export const UrlShortener = () => {
 
   const API_URL = 'https://rel.ink/api/links/';
   const BASE_URL = 'https://rel.ink/';
+  const LOCAL_STORAGE_KEY = 'shortendUrls';
 
   // regex for valid website links
   let urlRegex =/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+
+  useEffect( () => {
+    // grab previously shortend urls from local storage
+    setShortendUrls( getUrlsFromStorage() );
+  }, []);
+
+  // check for valid url links
   const isValidUrl = ( url: string ): boolean => urlRegex.test( url );
+
+  // grab data from local storage and parse into an array
+  const getUrlsFromStorage = () => JSON.parse( localStorage.getItem( LOCAL_STORAGE_KEY )! );
 
   const handleOnInputChange = ( event: React.ChangeEvent<HTMLInputElement> ): void => {
     // set urlInput state
     setUrlInput( event.target.value );
-
     // test if url is valid
     setInvalidUrl( !isValidUrl( event.target.value ) );
   }
@@ -49,7 +59,10 @@ export const UrlShortener = () => {
     let result = await response.json();
 
     // add to list of shortened urls
-    setShortendUrls( ( shortendUrls ) => [ ...shortendUrls, result ] );
+    setShortendUrls(  [ ...shortendUrls, result ] );
+
+    // add to local storage
+    localStorage.setItem( LOCAL_STORAGE_KEY, JSON.stringify( [ ...shortendUrls, result ] ));
   }
 
   return (
