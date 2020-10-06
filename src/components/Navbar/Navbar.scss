@@ -12,28 +12,79 @@
     list-style: none;
   }
 
+  .navbar__logo-container {
+    @include flexbox();
+    @include flex-flow( row );
+    @include justify-content( space-between );
+    @include align-items( center );
+    width: 20%;
+
+    @include media( ">phone", "<=tablet" ) {
+      width: 100%;
+    }
+
+
+    a.navbar__media-toggle {
+      display: none;
+
+      @include flex-flow( column );
+      @include justify-content( space-around );
+
+      height: 1.6em;
+      width: 1.6em;
+
+      .bar {
+        height: 3px;
+        width: 100%;
+        background-color: $grayish-violet;
+        border-radius: 1em;
+      }
+
+      @include media( ">phone", "<=tablet" ) {
+        @include flexbox();
+      }
+    }
+  }
+
   .navbar__logo {
     margin-right: 2.5em;
+    height: auto;
   }
 
   .navbar__header, .navbar__footer, ul, li {
     @include flexbox();
     @include flex-flow( row );
     @include align-items( center );
+
+    @include media( ">phone", "<=tablet" ) {
+      @include flex-flow( column );
+    }
+  }
+
+  .navbar__separator {
+    // display: none;
+
+    @include media( ">phone", "<=tablet" ) {
+      width: 100%;
+      opacity: 0.2;
+    }
   }
 
   .navbar__header {
     width: 30%;
+
+    @include media( ">phone", "<=tablet" ) {
+      width: 100%;
+    }
   }
 
   .navbar__links {
-    @include justify-content( space-evenly );
-    width: 100%;
+    @include justify-content( space-between );
+    width: 60%;
   }
 
   .navbar__account-links {
     @include justify-content( space-between );
-    width: 100%;
 
     white-space: nowrap;
     white-space: -moz-pre-wrap; /* Firefox */
@@ -43,7 +94,7 @@
   }
 
   .navbar__links, .navbar__account-links {
-    font-size: 0.8em;
+    font-size: 0.8em
   }
 
   li {
@@ -69,21 +120,65 @@
     }
   }
 
-  
   .navbar__account-link {
     padding: 0.5em 1em;
     margin-left: 1em;
-  
+
     &:hover {
-    border-radius: 3em;
-    background: $btn-inactive;
+      border-radius: 3em;
+      background: $btn-inactive;
 
       a {
         color: #fff;
         font-weight: bold;
       }
     }
+
+    @include media( ">phone", "<=tablet" ) {
+      margin: 0.5em 0;
+      width: 100%;
+    }
   }
 
+  .navbar__links-container {
+    @include flexbox();
+    @include flex-flow( row );
+    @include justify-content( space-between );
+    width: 80%;
+
+    @include media( ">phone", "<=tablet" ) {
+      @include flex-flow( column );
+      @include justify-content( center );
+      @include align-items( center );
+      @include align-self( center );
+
+      background: $dark-violet;
+      border-radius: 1em;
+      padding: 1em;
+      margin-top: 1em;
+
+      a {
+        font-size: 1.3em;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .navbar__separator {
+        display: none;
+        @include media( ">phone", "<=tablet" ){
+          height: 1px;
+          background: $grayish-violet;
+          width: 100%;
+          margin: 0.5em 0;
+        }
+      }
+    }
+  }
+
+  @include media( ">phone", "<=tablet" ) {
+    // display: none;
+    @include flex-flow( column );
+  }
 }
 
