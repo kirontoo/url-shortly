@@ -5,9 +5,16 @@ import { Button } from 'components/Button';
 import { ShortUrl } from 'components/ShortUrl';
 
 interface ShortUrlType {
-  url: string;
-  hashid: string;
-  created_at: string;
+    code: string,
+    short_link: string,
+    full_short_link: string,
+    short_link2: string,
+    full_short_link2: string,
+    short_link3: string,
+    full_short_link3: string,
+    share_link: string,
+    full_share_link: string,
+    original_link: string
 }
 
 export const UrlShortener = () => {
@@ -17,8 +24,7 @@ export const UrlShortener = () => {
   // all urls that have been shortened
   const [ shortendUrls, setShortendUrls ] = useState< ShortUrlType[] >( [] );
 
-  const API_URL = 'https://rel.ink/api/links/';
-  const BASE_URL = 'https://rel.ink/';
+  const API_URL = 'https://api.shrtco.de/v2/shorten';
   const LOCAL_STORAGE_KEY = 'shortendUrls';
 
   // regex for valid website links
@@ -45,26 +51,24 @@ export const UrlShortener = () => {
   }
 
   const createShortUrl = async (): Promise<void> => {
-    let requestData = {
-      url: urlInput
-    };
+    try {
+      // API request
+      let response = await fetch( `${API_URL}?url=${urlInput}`, {
+        mode: 'cors',
+        method: 'POST',
+      });
 
-    // API request
-    let response = await fetch( API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify( requestData )
-    });
+      let data = await response.json();
 
-    let result = await response.json();
+      // add to list of shortened urls
+      setShortendUrls(  [ ...shortendUrls, data.result] );
 
-    // add to list of shortened urls
-    setShortendUrls(  [ ...shortendUrls, result ] );
+      // add to local storage
+      localStorage.setItem( LOCAL_STORAGE_KEY, JSON.stringify( [ ...shortendUrls, data.result ] ));
 
-    // add to local storage
-    localStorage.setItem( LOCAL_STORAGE_KEY, JSON.stringify( [ ...shortendUrls, result ] ));
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -84,7 +88,7 @@ export const UrlShortener = () => {
             <span 
               className="url-shortener__error"
               style={ ( invalidUrl ) ? { "display": "block" } : {} }
-              >Please add a link</span>
+              >Please add a valid link</span>
 
           </div>
           <Button className="btn-square" type="button" onClick={ createShortUrl }>Shorten It!</Button>
@@ -92,7 +96,7 @@ export const UrlShortener = () => {
       </div>
       <div className="url-shortener__short-urls">
         {
-          shortendUrls.map( ( shortUrl ) => <ShortUrl key={ shortUrl.hashid } oldUrl={ shortUrl.url } shortUrl={ BASE_URL + shortUrl.hashid }/> )
+          shortendUrls.map( ( shortUrl ) => <ShortUrl key={ shortUrl.code } oldUrl={ shortUrl.original_link } shortUrl={shortUrl.short_link}/> )
         }
       </div>
     </div>
