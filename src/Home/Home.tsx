@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.scss';
 
 // components
 import { Navbar } from 'components/Navbar';
@@ -10,14 +11,22 @@ import { Footer } from 'components/Footer';
 
 export const Home = () => {
   return (
-    <div className="container">
+    <>
       <Navbar />
-      <Banner />
-      <div className="gray-background" />
-      <UrlShortener /> 
-      <Stats />
-      <BoostLinks />
+      <main className="main">
+      </main>
       <Footer />
-    </div>
+    </>
   )
 };
+
+
+    // <div className="container">
+    //   <Navbar />
+    //   <Banner />
+    //   <div className="gray-background" />
+    //   <UrlShortener /> 
+    //   <Stats />
+    //   <BoostLinks />
+    //   <Footer />
+    // </div>
