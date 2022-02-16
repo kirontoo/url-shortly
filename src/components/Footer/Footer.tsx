@@ -6,7 +6,6 @@ import { ReactComponent as TwitterIcon }  from './images/icon-twitter.svg';
 import { ReactComponent as PinterestIcon }  from './images/icon-pinterest.svg';
 import { ReactComponent as InstagramIcon }  from './images/icon-instagram.svg';
 
-// TODO: mock todo
 export const Footer = () => {
   return (
     <div className="footer">
