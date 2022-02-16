@@ -2,183 +2,130 @@
 
 .navbar {
   @include flexbox();
-  @include flex-flow( row );
+  @include flex-flow( column );
   @include justify-content( space-between );
   @include align-items( space-between );
-  width: 70%;
-  margin: 0 auto;
+  max-width: 100vw;
+  padding: 2rem 1.5rem;
+
+  @include media( ">=desktop" ) {
+    @include flex-flow( row );
+    @include align-items( center );
+    padding: 1rem;
+    width: 70%;
+    margin: 0 auto;
+  }
 
   ul, li {
     list-style: none;
   }
 
-  .navbar__logo-container {
+  .navbar__main {
     @include flexbox();
     @include flex-flow( row );
     @include justify-content( space-between );
     @include align-items( center );
-    width: 20%;
+  }
 
-    @include media( ">phone", "<=tablet" ) {
+  .navbar__logo-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar__media-toggle {
+    @include flexbox();
+    @include flex-flow( column );
+    @include justify-content( space-around );
+
+    height: 1.5rem;
+    width: 1.5rem;
+
+    .bar {
+      height: 0.3rem;
       width: 100%;
+      background-color: $grayish-violet;
+      border-radius: 1rem;
     }
 
-
-    a.navbar__media-toggle {
+    @include media( ">=desktop") {
       display: none;
-
-      @include flex-flow( column );
-      @include justify-content( space-around );
-
-      height: 1.6em;
-      width: 1.6em;
-
-      .bar {
-        height: 3px;
-        width: 100%;
-        background-color: $grayish-violet;
-        border-radius: 1em;
-      }
-
-      @include media( ">phone", "<=tablet" ) {
-        @include flexbox();
-      }
     }
   }
 
   .navbar__logo {
-    margin-right: 2.5em;
     height: auto;
   }
 
-  .navbar__header, .navbar__footer, ul, li {
-    @include flexbox();
-    @include flex-flow( row );
-    @include align-items( center );
-
-    @include media( ">phone", "<=tablet" ) {
-      @include flex-flow( column );
-    }
-  }
-
-  .navbar__separator {
-    // display: none;
-
-    @include media( ">phone", "<=tablet" ) {
-      width: 100%;
-      opacity: 0.2;
-    }
-  }
-
-  .navbar__header {
-    width: 30%;
-
-    @include media( ">phone", "<=tablet" ) {
-      width: 100%;
-    }
-  }
-
+  .navbar__links-container,
   .navbar__links {
-    @include justify-content( space-between );
-    width: 60%;
-  }
+    text-align: center;
+    @include flexbox();
+    @include flex-flow( column );
+    row-gap: 1rem;
 
-  .navbar__account-links {
-    @include justify-content( space-between );
-
-    white-space: nowrap;
-    white-space: -moz-pre-wrap; /* Firefox */
-    white-space: -o-pre-wrap; /* Opera */
-    white-space: pre-wrap; /* Chrome */
-    word-wrap: break-word; /* IE */
-  }
-
-  .navbar__links, .navbar__account-links {
-    font-size: 0.8em
-  }
-
-  li {
-    padding: 1em 0;
-
-    a {
-      text-decoration: none;
-      color: $secondary-text;
-
-      &:hover {
-        font-weight: bold;
-      }
+    @include media( ">=desktop") {
+      @include flex-flow( row );
+      width: 100%;
+      column-gap: 1rem;
+      padding: 0;
     }
   }
 
   .navbar__link {
-    margin: 0 1em;
-
-    &:hover {
-      a {
-        color: $primary-text;
-      }
-    }
-  }
-
-  .navbar__account-link {
-    padding: 0.5em 1em;
-    margin-left: 1em;
-
-    &:hover {
-      border-radius: 3em;
-      background: $btn-inactive;
-
-      a {
-        color: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-transform: capitalize;
+    a {
+      color: $white;
+      text-decoration: none;
+      @include media(">=desktop") {
+        color: $gray;
         font-weight: bold;
       }
     }
 
-    @include media( ">phone", "<=tablet" ) {
-      margin: 0.5em 0;
-      width: 100%;
+    &:hover {
+      background-color: $link-active;
+      a {
+        color: $white;
+      }
+    }
+
+    @include media(">=desktop") {
+      padding: 0.5rem 1rem;
+    }
+
+  }
+
+  .navbar__links {
+    &:last-child {
+      @include media(">=desktop") {
+        @include justify-content(flex-end);
+      }
     }
   }
 
   .navbar__links-container {
-    @include flexbox();
-    @include flex-flow( row );
-    @include justify-content( space-between );
-    width: 80%;
-
-    @include media( ">phone", "<=tablet" ) {
-      @include flex-flow( column );
-      @include justify-content( center );
-      @include align-items( center );
-      @include align-self( center );
-
-      background: $dark-violet;
-      border-radius: 1em;
-      padding: 1em;
-      margin-top: 1em;
-
-      a {
-        font-size: 1.3em;
-        color: #fff;
-        font-weight: bold;
-        text-align: center;
-      }
-
-      .navbar__separator {
-        display: none;
-        @include media( ">phone", "<=tablet" ){
-          height: 1px;
-          background: $grayish-violet;
-          width: 100%;
-          margin: 0.5em 0;
-        }
-      }
+    background-color: $dark-violet;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 0;
+    margin-top: 1rem;
+    @include media( ">=desktop" ) {
+      @include justify-content(space-between);
+      background-color: $white;
+      margin: 0;
     }
   }
 
-  @include media( ">phone", "<=tablet" ) {
-    // display: none;
-    @include flex-flow( column );
+  .navbar__separator {
+    color: $grayish-violet;
+    background-color: $grayish-violet;
+    border-color: $grayish-violet;
+    opacity: 0.2;
+      @include media(">=desktop") {
+        display: none;
+      }
   }
 }
 

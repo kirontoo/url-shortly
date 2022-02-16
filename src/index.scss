@@ -6,7 +6,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: $primary-text;
   min-height: 100vh;
-  max-width: 100vw;
+  width: 100%;
   @include flexbox();
   @include flex-flow( column );
 }
