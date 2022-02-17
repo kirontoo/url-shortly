@@ -1,37 +1,84 @@
 @import 'styles/main';
 
 .banner {
-  background: inherit;
-  margin-top: 3em;
+  padding: 0 1rem;
+  overflow-x: hidden;
 
-  @include flexbox();
-  @include justify-content( space-between );
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
-  margin-top: 2em;
-
+  .banner__img {
+    width: 140%; 
+    height: auto;
+  }
 
   .banner__text {
     @include flexbox();
-    @include flex-flow( column );
-    justify-content: center;
-    align-items: flex-start;
-    width: 70%;
+    @include flex-flow(column);
+    row-gap: 1.3rem;
+    margin: 2rem 0;
+  }
 
-    .banner__title {
-      font-size: 2.3em;
+  .banner__title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }  
+
+  .banner__subtext {
+    font-size: 1.3rem;
+  }
+
+  .banner__title,
+  .banner__subtext {
+    text-align: center;
+
+    @include media(">=desktop") {
+      text-align: left;
     }
   }
 
-  .banner__img {
-    position: relative;
-    width: 60%;
-    height: auto;
-    left: 20%;
+  .btn-pill {
+    font-size: 1.6rem;
+    width: max-content;
+    margin: 0 auto;
   }
 
-  button.btn {
-    margin-top: 1em;
+  @include media(">=desktop") {
+    column-gap: 3rem;
+    @include flex-flow(row-reverse);
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+    height: 100%;
+    position: relative;
+    overflow-y: visible;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    margin-left: 10%;
+    padding: 0;
+
+    .banner__img {
+      width: 50%;
+      position: relative;
+      right: 4rem;
+      top: 0;
+      height: auto;
+    } 
+
+    .banner__text {
+      row-gap: 0.5rem;
+      width: 35%;
+    }
+
+    .banner__title {
+      font-size: 4.5rem;
+    }
+    .banner__subtext {
+      font-size: 1.4rem;
+    }
+
+    .btn-pill {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+    }
   }
 }

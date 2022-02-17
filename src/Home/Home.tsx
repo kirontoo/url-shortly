@@ -14,19 +14,9 @@ export const Home = () => {
     <>
       <Navbar />
       <main className="main">
+        <Banner />
       </main>
       <Footer />
     </>
   )
 };
-
-
-    // <div className="container">
-    //   <Navbar />
-    //   <Banner />
-    //   <div className="gray-background" />
-    //   <UrlShortener /> 
-    //   <Stats />
-    //   <BoostLinks />
-    //   <Footer />
-    // </div>

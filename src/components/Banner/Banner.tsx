@@ -6,7 +6,8 @@ const backgroundImg = process.env.PUBLIC_URL + 'images/illustration-working.svg'
 
 export function Banner() {
   return (
-    <div className="banner">
+    <section className="banner">
+      <img className="banner__img" src={ backgroundImg } alt="illustration working"/>
       <div className="banner__text">
         <h1 className="banner__title">More than just shorter links</h1>
         <p className="banner__subtext subtitle">
@@ -14,7 +15,6 @@ export function Banner() {
         </p>
         <Button className="btn-pill">Get Started</Button>
       </div>
-      <img className="banner__img" src={ backgroundImg } alt="illustration working"/>
-    </div>
+    </section>
   )
 }
