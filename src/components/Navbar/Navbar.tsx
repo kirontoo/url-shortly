@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
 import  logo from 'logo.svg';
 
-// TODO: hover for regular navlinks should be black text not button hover
-// TODO: navbar functionality
 export function Navbar() {
   let [ navbarToggled, setNavbarToggled ] = useState<boolean>( true );
 
