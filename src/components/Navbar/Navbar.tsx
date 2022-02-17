@@ -12,7 +12,7 @@ export function Navbar() {
     if ( window.screen.width <= 800 ) {
       setNavbarToggled( false );
     }
-  }, [] );
+  }, []);
 
   let toggleNavbar = ( event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault(); 
