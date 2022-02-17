@@ -27,7 +27,7 @@
     @include align-items( center );
   }
 
-  .navbar__logo-container {
+  .navbar__logo-menu {
     width: 100%;
     height: auto;
   }
@@ -39,12 +39,13 @@
 
     height: 1.5rem;
     width: 1.5rem;
+    background-color: none;
+    border: none;
 
     .bar {
-      height: 0.3rem;
+      height: 0.2rem;
       width: 100%;
       background-color: $grayish-violet;
-      border-radius: 1rem;
     }
 
     @include media( ">=desktop") {
@@ -56,7 +57,7 @@
     height: auto;
   }
 
-  .navbar__links-container,
+  .navbar__links-menu,
   .navbar__links {
     text-align: center;
     @include flexbox();
@@ -71,10 +72,12 @@
     }
   }
 
+
   .navbar__link {
     border-radius: 2rem;
     padding: 0.5rem;
     text-transform: capitalize;
+    font-size: 1.3rem;
     a {
       color: $white;
       text-decoration: none;
@@ -93,6 +96,7 @@
 
     @include media(">=desktop") {
       padding: 0.5rem 1rem;
+      font-size: 1rem;
     }
 
   }
@@ -105,7 +109,7 @@
     }
   }
 
-  .navbar__links-container {
+  .navbar__links-menu {
     background-color: $dark-violet;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -116,6 +120,14 @@
       background-color: $white;
       margin: 0;
     }
+  }
+
+  .navbar__links-menu--hidden {
+    display: none;
+  }
+
+  .navbar__links-menu--show {
+    @include flexbox();
   }
 
   .navbar__separator {

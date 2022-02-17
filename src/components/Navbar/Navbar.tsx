@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.scss';
 import  logo from 'logo.svg';
 
+// TODO: hover for regular navlinks should be black text not button hover
+// TODO: navbar functionality
 export function Navbar() {
   let [ navbarToggled, setNavbarToggled ] = useState<boolean>( true );
 
@@ -10,13 +12,13 @@ export function Navbar() {
     if ( window.screen.width <= 800 ) {
       setNavbarToggled( false );
     }
-
   }, [] );
 
   let toggleNavbar = ( event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault(); 
 
     setNavbarToggled( ( navbarToggled ) => !navbarToggled );
+    console.log("triggered")
   };
 
   return (
@@ -25,14 +27,17 @@ export function Navbar() {
       <div className="navbar__main">
         <img src={ logo } alt="" className="navbar__logo"/>
 
-        <a href="#" className="navbar__media-toggle">
+        <button 
+          className="navbar__media-toggle"
+          onClick={toggleNavbar}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </a>
+        </button>
       </div>
 
-      <div className="navbar__links-container">
+      <div className={"navbar__links-menu " + ((navbarToggled) ? "navbar__links-menu--show" : "navbar__links-menu--hidden")}>
         <ul className="navbar__links navbar__header">
           <li className="navbar__link"><a href="#">Features</a></li>
           <li className="navbar__link"><a href="#">Pricing</a></li>
