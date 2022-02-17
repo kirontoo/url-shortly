@@ -97,6 +97,13 @@
     @include media(">=desktop") {
       padding: 0.5rem 1rem;
       font-size: 1rem;
+      background: none;
+      &:hover {
+        background: none;
+        a {
+          color: #000;
+        }
+      }
     }
 
   }
@@ -105,6 +112,15 @@
     &:last-child {
       @include media(">=desktop") {
         @include justify-content(flex-end);
+
+        .navbar__link {
+          &:hover {
+            background-color: $link-active;
+            a {
+              color: $white;
+            }
+          }
+        }
       }
     }
   }
@@ -124,6 +140,10 @@
 
   .navbar__links-menu--hidden {
     display: none;
+
+    @include media( ">=desktop" ) {
+      @include flexbox();
+    }
   }
 
   .navbar__links-menu--show {
