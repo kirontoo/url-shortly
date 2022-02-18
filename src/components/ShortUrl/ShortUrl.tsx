@@ -23,12 +23,16 @@ export const ShortUrl: React.FC< ShortUrlProps > = ({ oldUrl, shortUrl }) => {
 
   return (
     <li className="short-url">
-      <span className="short-url__link">
-        {
-        ( oldUrl.length > 55 ) ? oldUrl.trim().slice( 0, 55 ).concat( "..." ) : oldUrl
-      }
-      </span>
-      <span ref={ urlToCopyRef } className="short-url__short-link">{ shortUrl }</span>
+      <div className="short-url__links">
+        <span className="short-url__link">
+          {
+            (oldUrl.length > 55) 
+            ? oldUrl.trim().slice(0, 55).concat("...") 
+            : oldUrl
+          }
+        </span>
+        <span ref={ urlToCopyRef } className="short-url__short-link">{ shortUrl }</span>
+      </div>
       <Button onClick={ addToClipboard } className={ `short-url__copy btn-square ${( copied ) ? "btn-active" : ""}`  }>
         { copied ? "Copied!" : "Copy" }
       </Button>
