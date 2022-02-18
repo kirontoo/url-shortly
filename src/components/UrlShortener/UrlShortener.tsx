@@ -72,33 +72,42 @@ export const UrlShortener = () => {
   }
 
   return (
+    <>
+
     <div className="url-shortener">
-      <div className="url-shortener__container">
         <div className="url-shortener__form">
-          <div className="url-shortener__input-container">
-
-            <input 
-              className="url-shortener__link-Error"
-              onChange={ handleOnInputChange }
-              placeholder="Shorten a link here..."
-              type="text"
-              name="url-link"
-              id="url-link"/>
-
-            <span 
-              className="url-shortener__error"
-              style={ ( invalidUrl ) ? { "display": "block" } : {} }
-              >Please add a valid link</span>
-
+          <div className="url-shortener__input">
+              <input 
+                className="url-input" 
+                type="text" 
+                onChange={handleOnInputChange}
+                placeholder="Shorten a link here..."
+                name="url-link"
+                id="url-link"
+              />
+              <span 
+                className={"url-input__error " + (!invalidUrl ? "url-input__error--hidden" : "url-input__error--visible")}
+              >
+                <em>
+                  Please add a link
+                </em>
+              </span>
           </div>
-          <Button className="btn-square" type="button" onClick={ createShortUrl }>Shorten It!</Button>
+
+          <Button 
+            className="btn-square" 
+            type="button" 
+            onClick={ createShortUrl }
+          >
+            Shorten It!
+          </Button>
         </div>
-      </div>
-      <div className="url-shortener__short-urls">
-        {
-          shortendUrls.map( ( shortUrl ) => <ShortUrl key={ shortUrl.code } oldUrl={ shortUrl.original_link } shortUrl={shortUrl.short_link}/> )
-        }
-      </div>
+        <ul className="url-shortener__short-urls">
+          {
+            shortendUrls.map( ( shortUrl ) => <ShortUrl key={ shortUrl.code } oldUrl={ shortUrl.original_link } shortUrl={shortUrl.short_link}/> )
+          }
+        </ul>
     </div>
+    </>
   );
 }
