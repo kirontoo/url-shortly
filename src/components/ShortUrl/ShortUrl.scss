@@ -11,7 +11,6 @@
 }
 
 .short-url {
-  width: 100%;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 
@@ -20,38 +19,32 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
-  .short-url__container {
-    width: calc( 70% + 5em ); 
-    margin: 0.7em auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 1rem 0;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 0.2rem;
 
-    @include flexbox();
-    @include flex-flow( row );
-    @include justify-content( space-between );
-    @include align-items( center );
+  @include flexbox();
+  @include flex-flow(column);
+  row-gap: 0.5rem;
+  overflow: hidden;
 
-    padding: 0.5em 0;
-    background: #fff;
-    border-radius: 5px;
+  .short-url__short-link {
+    color: $cyan;
+    padding: 0 1rem;
+  }
 
-    .short-url__link {
-      margin-left: 1em
-    }
+  .short-url__link {
+    border-bottom: 1px solid $gray;
+    padding: 0rem 1rem 0.5rem 1rem;
+  }
 
-    .short-url__short-link-container {
-      @include flexbox();
-      @include flex-flow( row );
-      @include align-items( center );
-      margin-right: 1em;
+  .btn-square {
+    margin: 0rem 1rem 0rem 1rem;
+    padding: 0.8rem 0;
+  }
 
-      .short-url__short-link {
-        color: $cyan;
-        margin-right: 1em;
-      }
-
-      .short-url__copy {
-        width: 6em;
-      }
-    }
+  @include media(">=desktop") {
+    width: 80%;
   }
 }
