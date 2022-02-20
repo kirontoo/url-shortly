@@ -68,6 +68,13 @@
     }
   }
 
+  .url-shortener__short-urls {
+    margin: 1rem 0;
+    @include flexbox();
+    @include flex-flow(column);
+    row-gap: 1rem;
+  }
+
   @include media(">=desktop") {
     width: 80%;
     margin: 0 auto;
