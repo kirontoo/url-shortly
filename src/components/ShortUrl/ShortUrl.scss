@@ -21,8 +21,9 @@
 
   margin: 1rem 0;
   padding: 1rem 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 0.2rem;
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  border-radius: 0.4rem;
+  background-color: $white;
 
   @include flexbox();
   @include flex-flow(column);
@@ -37,6 +38,7 @@
   .short-url__link {
     border-bottom: 1px solid $gray;
     padding: 0rem 1rem 0.5rem 1rem;
+    color: $very-dark-blue;
   }
 
   .btn-square {
@@ -55,6 +57,7 @@
     @include justify-content(space-between);
     @include align-items(center);
     column-gap: 1rem;
+    padding: 1rem;
 
     .short-url__links {
       @include flex-flow(row);
@@ -67,12 +70,18 @@
 
     .short-url__link {
       border: none;
+      padding: 0;
+    }
+
+    .short-url__short-link {
+      padding: 0;
     }
 
     .btn-square {
       width: 10%;
       height: max-content;
-      padding: 1rem;
+      padding: 0.6rem;
+      margin: 0;
     }
   }
 }

@@ -16,7 +16,6 @@ export function Navbar() {
     event.preventDefault(); 
 
     setNavbarToggled( ( navbarToggled ) => !navbarToggled );
-    console.log("triggered")
   };
 
   return (

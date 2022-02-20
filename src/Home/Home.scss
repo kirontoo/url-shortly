@@ -1,4 +1,16 @@
+@import 'styles/main';
+
 .main {
-    flex-grow: 1;
     overflow-x: hidden;
+}
+
+.promo {
+    background-color: $gray;
+    margin-top: 9rem;
+    height: 100%;
+    margin-bottom: -1rem;
+
+    @include media(">=desktop") {
+        margin-top: 10rem;
+    }
 }

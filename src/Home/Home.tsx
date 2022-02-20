@@ -15,7 +15,9 @@ export const Home = () => {
       <Navbar />
       <main className="main">
         <Banner />
-        <UrlShortener />
+        <section className="promo">
+          <UrlShortener />
+        </section>
       </main>
       <Footer />
     </>

@@ -5,9 +5,8 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: $primary-text;
+  font-size: 18px;
   min-height: 100vh;
-  @include flexbox();
-  @include flex-flow( column );
 }
 
 code {

@@ -72,8 +72,6 @@ export const UrlShortener = () => {
   }
 
   return (
-    <>
-
     <div className="url-shortener">
         <div className="url-shortener__form">
           <div className="url-shortener__input">
@@ -108,6 +106,5 @@ export const UrlShortener = () => {
           }
         </ul>
     </div>
-    </>
   );
 }
