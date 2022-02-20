@@ -2,30 +2,71 @@
 
 .card {
   background: #fff;
-  width: 16em;
   text-align: left;
-  padding: 1em;
-  padding-top: 3.5em;
-  margin: 1em;
+  padding: 1rem;
+  padding-top: 3.5rem;
+  margin: 1rem;
   position: relative;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
+
+  .card__header {
+    position: absolute;
+    top: -3rem;
+    width: 100%;
+    left: 0;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+  }
 
   .card__icon {
     background: $dark-violet;
-    padding: 1em;
+    padding: 1rem;
     border-radius: 50%;
-    position: absolute;
-    top: -2em;
+    width: 3.5rem;
+    height: 3.5rem;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
   }
 
   .card__title {
-    margin-bottom: 1em;
-    margin-top: 0.5em
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    color: $very-dark-violet;
+    text-align: center;
   }
 
   .card__text {
     color: $secondary-text;
-    font-size: 0.8em;
+    // font-size: 0.8rem;
+    text-align: center;
+  }
+
+  &:not(:last-child):after {
+    content: '';
+    width: 0.5rem;
+    height: 5rem;
+    background: $cyan;
+    position: absolute;
+    top: 100%;
+    left: 49%;
+    z-index: 0;
+  }
+
+  @include media(">=desktop") {
+    width: calc(100% / 3);
+    &:not(:last-child):after {
+      width: 0;
+      height: 0;
+    }
+    .card__header {
+      @include justify-content(flex-start);
+      padding: 0 2rem;
+    }
+
+    .card__title, .card__text {
+      text-align: left;
+    }
   }
 }

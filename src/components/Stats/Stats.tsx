@@ -25,8 +25,8 @@ export const Stats = () => {
   return (
     <div className="stats">
       <div className="stats__header">
-        <h1>Advanced Statistics</h1>
-        <p className="subtitle">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+        <h2 className="stats__title">Advanced Statistics</h2>
+        <span className="subtitle">Track how your links are performing across the web with our advanced statistics dashboard.</span>
       </div>
 
       <div className="stats__cards">

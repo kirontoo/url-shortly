@@ -17,7 +17,9 @@ export const Home = () => {
         <Banner />
         <section className="promo">
           <UrlShortener />
+          <Stats/>
         </section>
+        <BoostLinks/>
       </main>
       <Footer />
     </>

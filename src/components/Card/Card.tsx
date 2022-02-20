@@ -11,7 +11,11 @@ export const Card: React.FC< CardProps > = ( { title, imageUrl, text } ) => {
   let icon = process.env.PUBLIC_URL + 'images/' + imageUrl;
   return (
     <div className="card">
-      <img src={ icon } alt="" className="card__icon"/>
+      <div className="card__header">
+        <div className="card__icon">
+          <img src={ icon } alt={icon} />
+        </div>
+      </div>
       <h3 className="card__title">{ title }</h3>
       <p className="card__text">{ text }</p>
     </div>

@@ -6,38 +6,63 @@
   @include flex-flow( column );
   @include align-items( center );
   text-align: center;
-  margin-top: 7em;
+  padding-bottom: 5rem;
+
 
   .stats__header {
-    width: 40%;
+    @include media(">=desktop") {
+      width: 30%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stats__title {
+      margin-bottom: 1rem;
+      @include media(">=desktop") {
+        font-size: 2.5rem;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      margin: 0 auto;
+      color: $secondary-text;
+    }
   }
 
   .stats__cards {
     @include flexbox();
-    @include flex-flow( row );
-    @include justify-content( center );
-    margin-top: 4em;
-    position: relative;
+    @include flex-flow(column);
+    row-gap: 4rem;
 
-    .stats__line {
-      background: $cyan;
-      width: 40em;
-      height: 0.5em;
-      position: absolute;
-      top: 45%;
-      left: 15em;
-    }
+    @include media(">=desktop") {
+      width: 80%;
+      margin: 0 auto;
+      @include flex-flow( row );
+      @include justify-content( center );
+      margin-top: 4rem;
+      position: relative;
 
-    .card {
-      height: 9em;
-    }
+      .stats__line {
+        background: $cyan;
+        width:  70%;
+        height: 0.5rem;
+        position: absolute;
+        top: 45%;
+        left: 20%;
+      }
 
-    .card:nth-child(3) {
-      margin-top: 3em;
-    }
+      .card {
+        height: max-content;
+      }
 
-    .card:nth-child(4) {
-      margin-top: 6em;
+      .card:nth-child(3) {
+        margin-top: 3rem;
+      }
+
+      .card:nth-child(4) {
+        margin-top: 6rem;
+      }
     }
   }
 }
