@@ -10,9 +10,9 @@ export function Banner() {
       <img className="banner__img" src={ backgroundImg } alt="illustration working"/>
       <div className="banner__text">
         <h1 className="banner__title">More than just shorter links</h1>
-        <p className="banner__subtext subtitle">
+        <span className="banner__subtext subtitle">
           Build your brand's recognition and get detailed insights on how your links are performing.
-        </p>
+        </span>
         <Button className="btn-pill">Get Started</Button>
       </div>
     </section>
