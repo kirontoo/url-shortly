@@ -5,10 +5,8 @@
 }
 
 .promo {
-    background-color: $gray;
+    background-color: #E1E1EA;
     margin-top: 9rem;
-    height: 100%;
-    margin-bottom: -1rem;
 
     @include media(">=desktop") {
         margin-top: 10rem;
