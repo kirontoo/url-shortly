@@ -7,8 +7,7 @@
   background: $dark-violet;
   background-image: url( './images/bg-boost-desktop.svg' );
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin-top: 5em;
+  background-size: cover;
   width: 100%;
 
   .boost-links__content {
@@ -16,10 +15,20 @@
     @include flexbox();
     @include flex-flow( column );
     @include align-items( center );
-    width: 40%;
 
     .btn.btn-pill {
-      margin-top: 1em;
+      margin-top: 1rem;
+      padding: 1rem;
+      width: 60%;
+      @include media(">=desktop") {
+        width: 40%;
+        font-size: 1.2rem;
+      }
+    }
+
+    @include media(">=desktop") {
+      width: 40%;
+      font-size: 1.5rem;
     }
   }
 }
