@@ -51,6 +51,12 @@ export const UrlShortener = () => {
   }
 
   const createShortUrl = async (): Promise<void> => {
+    if (urlInput === '') {
+      // set error if empty input
+      setInvalidUrl(true);
+      return;
+    }
+
     try {
       // API request
       let response = await fetch( `${API_URL}?url=${urlInput}`, {
@@ -59,12 +65,13 @@ export const UrlShortener = () => {
       });
 
       let data = await response.json();
+      if (data.ok) {
+        // add to list of shortened urls
+        setShortendUrls(  [ ...shortendUrls, data.result] );
 
-      // add to list of shortened urls
-      setShortendUrls(  [ ...shortendUrls, data.result] );
-
-      // add to local storage
-      localStorage.setItem( LOCAL_STORAGE_KEY, JSON.stringify( [ ...shortendUrls, data.result ] ));
+        // add to local storage
+        localStorage.setItem( LOCAL_STORAGE_KEY, JSON.stringify( [ ...shortendUrls, data.result ] ));
+      }
 
     } catch(err) {
       console.log(err)
