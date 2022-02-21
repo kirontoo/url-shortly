@@ -14,31 +14,31 @@ export const Footer = () => {
 
         <div className="footer__links">
           <h3 className="footer__link-title">features</h3>
-          <a href="#" className="footer__link">Link Shortening</a>
-          <a href="#" className="footer__link">Branded Links</a>
-          <a href="#" className="footer__link">Analytics</a>
+          <a href="/" className="footer__link">Link Shortening</a>
+          <a href="/" className="footer__link">Branded Links</a>
+          <a href="/" className="footer__link">Analytics</a>
         </div>
 
         <div className="footer__links">
           <h3 className="footer__link-title">resources</h3>
-          <a href="#" className="footer__link">Blog</a>
-          <a href="#" className="footer__link">Developers</a>
-          <a href="#" className="footer__link">Support</a>
+          <a href="/" className="footer__link">Blog</a>
+          <a href="/" className="footer__link">Developers</a>
+          <a href="/" className="footer__link">Support</a>
         </div>
 
         <div className="footer__links">
           <h3 className="footer__link-title">company</h3>
-          <a href="#" className="footer__link">About</a>
-          <a href="#" className="footer__link">Our Team</a>
-          <a href="#" className="footer__link">Careers</a>
-          <a href="#" className="footer__link">Contact</a>
+          <a href="/" className="footer__link">About</a>
+          <a href="/" className="footer__link">Our Team</a>
+          <a href="/" className="footer__link">Careers</a>
+          <a href="/" className="footer__link">Contact</a>
         </div>
 
         <div className="footer__social-links">
-          <a href="#"><FacebookIcon className="footer__social-icon"/></a>
-          <a href="#"> <TwitterIcon className="footer__social-icon"/> </a>
-          <a href="#"> <PinterestIcon className="footer__social-icon"/> </a>
-          <a href="#"> <InstagramIcon className="footer__social-icon"/> </a>
+          <a href="/"><FacebookIcon className="footer__social-icon"/></a>
+          <a href="/"> <TwitterIcon className="footer__social-icon"/> </a>
+          <a href="/"> <PinterestIcon className="footer__social-icon"/> </a>
+          <a href="/"> <InstagramIcon className="footer__social-icon"/> </a>
         </div>
       </div>
     </div>

@@ -36,16 +36,16 @@ export function Navbar() {
 
       <div className={"navbar__links-menu " + ((navbarToggled) ? "navbar__links-menu--show" : "navbar__links-menu--hidden")}>
         <ul className="navbar__links navbar__header">
-          <li className="navbar__link"><a href="#">Features</a></li>
-          <li className="navbar__link"><a href="#">Pricing</a></li>
-          <li className="navbar__link"><a href="#">Resources</a></li>
+          <li className="navbar__link"><a href="/">Features</a></li>
+          <li className="navbar__link"><a href="/">Pricing</a></li>
+          <li className="navbar__link"><a href="/">Resources</a></li>
         </ul>
 
         <hr className="navbar__separator"/>
 
         <ul className="navbar__links navbar__footer">
-          <li className="navbar__link"><a href="#">Login</a></li>
-          <li className="navbar__link"><a href="#">Sign up</a></li>
+          <li className="navbar__link"><a href="/">Login</a></li>
+          <li className="navbar__link"><a href="/">Sign up</a></li>
         </ul> 
       </div>
 
