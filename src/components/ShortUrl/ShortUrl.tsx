@@ -13,6 +13,7 @@ export const ShortUrl: React.FC< ShortUrlProps > = ({ oldUrl, shortUrl }) => {
 
   const [ copied, setCopied ] = useState< boolean >( false );
   const urlToCopyRef = useRef< null | HTMLParagraphElement >( null );
+  // eslint-disable-next-line
   const [ clipboard, setClipboard ] = useClippy();
 
   const addToClipboard = () => {
