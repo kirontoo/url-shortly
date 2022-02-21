@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-url-shortener-using-react-and-the-shrtcode-api-QgjVNYfnU)
-- Live Site URL: [Url Shortly](url-shortly-kirontoo.netlify.app)
+- Live Site URL: [Url Shortly](https://url-shortly-kirontoo.netlify.app)
 
 ## My process
 
